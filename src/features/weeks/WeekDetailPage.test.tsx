@@ -30,7 +30,7 @@ describe("WeekDetailPage", () => {
       id: "cohort-1",
       slug: "cohort-01",
       name: "Cohort 01",
-      currentWeekNumber: 2,
+      currentWeekNumber: 3,
       startsOn: "2026-10-01",
       endsOn: "2026-11-26",
     },
