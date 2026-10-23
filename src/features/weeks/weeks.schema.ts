@@ -5,9 +5,10 @@ export const cohortRefSchema = z.object({
   slug: z.string(),
   name: z.string(),
   nameAr: z.string().nullable().optional(),
-  currentWeekNumber: z.number().int().min(1).max(8).default(1),
+  currentWeekNumber: z.number().int().min(1).max(8),
   startsOn: z.string(),
   endsOn: z.string(),
+
 });
 
 export const weekResourceItemSchema = z.object({
