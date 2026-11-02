@@ -39,8 +39,8 @@ export const messages = {
         "نمذجة البيانات",
         "التدفق غير المتزامن",
         "الهوية والصلاحيات",
-        "التحقق والاعتمادية",
         "الاختبار",
+        "التحقق والاعتمادية",
         "الأداء",
         "التسليم",
       ],
@@ -74,6 +74,12 @@ export const messages = {
     portal: {
       title: "بوابة المشارك",
       signInTitle: "سجّل الدخول عشان تشوف أسبوعك",
+      signedOutTitle: "سجّل الدخول عشان تشوف أسبوعك",
+      signedOutBody: "يجب تسجيل الدخول للوصول إلى صفحات البوابة وتفاصيل الأسابيع.",
+      accessDeniedTitle: "غير مصرح بالدخول",
+      accessDeniedBody:
+        "حسابك لا يمتلك الصلاحية المطلوبة لعرض هذه الصفحة أو هذا الأسبوع.",
+      backHome: "العودة للرئيسية",
       logIn: "تسجيل الدخول",
       authFailedTitle: "فشل تسجيل الدخول",
       authFailedBody: "تعذر إكمال تسجيل الدخول. حاول مرة أخرى.",
@@ -184,8 +190,8 @@ export const messages = {
         "Data modeling",
         "Asynchronous flow",
         "Identity and access",
-        "Validation and reliability",
         "Testing",
+        "Validation and reliability",
         "Performance",
         "Delivery",
       ],
@@ -219,6 +225,13 @@ export const messages = {
     portal: {
       title: "Participant portal",
       signInTitle: "Sign in to see this week",
+      signedOutTitle: "Sign in to see this week",
+      signedOutBody:
+        "You must be signed in to access portal routes and weekly assignments.",
+      accessDeniedTitle: "Access denied",
+      accessDeniedBody:
+        "Your account does not have the required permissions to view this page.",
+      backHome: "Back to Home",
       logIn: "Log in",
       authFailedTitle: "Authentication failed",
       authFailedBody: "Could not complete sign in. Please try again.",
