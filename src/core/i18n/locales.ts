@@ -74,7 +74,7 @@ export const messages = {
     portal: {
       title: "بوابة المشارك",
       signInTitle: "سجّل الدخول عشان تشوف أسبوعك",
-      signedOutTitle: "تسجيل الدخول مطلوب",
+      signedOutTitle: "سجّل الدخول عشان تشوف أسبوعك",
       signedOutBody: "يجب تسجيل الدخول للوصول إلى صفحات البوابة وتفاصيل الأسابيع.",
       accessDeniedTitle: "غير مصرح بالدخول",
       accessDeniedBody:
@@ -225,7 +225,7 @@ export const messages = {
     portal: {
       title: "Participant portal",
       signInTitle: "Sign in to see this week",
-      signedOutTitle: "Sign in required",
+      signedOutTitle: "Sign in to see this week",
       signedOutBody:
         "You must be signed in to access portal routes and weekly assignments.",
       accessDeniedTitle: "Access denied",

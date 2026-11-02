@@ -47,7 +47,7 @@ describe("ProtectedRoute", () => {
     expect(signedOutScreen).toBeInTheDocument();
     expect(signedOutScreen).toHaveAttribute("role", "alert");
     expect(
-      screen.getByRole("heading", { name: /Sign in required/i }),
+      screen.getByRole("heading", { name: /Sign in to see this week/i }),
     ).toBeInTheDocument();
 
     const loginLink = within(signedOutScreen).getByRole("link", {
