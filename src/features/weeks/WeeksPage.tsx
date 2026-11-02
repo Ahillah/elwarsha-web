@@ -51,13 +51,7 @@ export function WeeksPage({ locale }: { locale: Locale }) {
           const isLocked = week.isLocked || week.status === "upcoming";
 
           if (isLocked) {
-            return (
-              <LockedWeekCard
-                key={week.weekNumber}
-                week={week}
-                copy={copy}
-              />
-            );
+            return <LockedWeekCard key={week.weekNumber} week={week} copy={copy} />;
           }
 
           return (

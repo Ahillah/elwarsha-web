@@ -9,10 +9,7 @@ export interface LockedWeekCardProps {
 
 export function LockedWeekCard({ week, copy }: LockedWeekCardProps) {
   return (
-    <div
-      className={`${styles.weekCard} ${styles.cardLocked}`}
-      aria-disabled="true"
-    >
+    <div className={`${styles.weekCard} ${styles.cardLocked}`} aria-disabled="true">
       <div>
         <div className={styles.cardTop}>
           <span className={styles.weekNumber}>

@@ -108,9 +108,7 @@ describe("WeeksPage", () => {
       </MemoryRouter>,
     );
 
-    expect(
-      await screen.findByRole("heading", { name: "Weeks" }),
-    ).toBeInTheDocument();
+    expect(await screen.findByRole("heading", { name: "Weeks" })).toBeInTheDocument();
     expect(
       screen.getByText("Something broke in the workshop. Reload and try again."),
     ).toBeInTheDocument();
@@ -203,7 +201,9 @@ describe("WeeksPage", () => {
     ).toBeInTheDocument();
 
     expect(screen.queryByText("State and data modeling")).not.toBeInTheDocument();
-    expect(screen.queryByText("How do frontend and backend communicate?")).not.toBeInTheDocument();
+    expect(
+      screen.queryByText("How do frontend and backend communicate?"),
+    ).not.toBeInTheDocument();
     expect(screen.getByText(/Locked until week begins/i)).toBeInTheDocument();
 
     const weekLinks = screen.getAllByRole("link");
