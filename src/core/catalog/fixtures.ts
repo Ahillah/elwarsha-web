@@ -6,10 +6,10 @@ export const productFixture: Product = {
   name: "ElWarsha Web",
   status: "active",
   repositories: [
-    { track: "backend", githubOwner: "elwarsha", githubRepo: "elwarsha-api" },
-    { track: "frontend", githubOwner: "elwarsha", githubRepo: "elwarsha-web" },
+    { githubOwner: "elwarsha", githubRepo: "elwarsha-api" },
+    { githubOwner: "elwarsha", githubRepo: "elwarsha-web" },
   ],
-  repository: { track: "frontend", githubOwner: "elwarsha", githubRepo: "elwarsha-web" },
+  repository: { githubOwner: "elwarsha", githubRepo: "elwarsha-web" },
 };
 
 export const engagementFixture: Engagement = {

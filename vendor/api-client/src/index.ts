@@ -31,7 +31,7 @@ export type SessionResponse = {
 };
 
 export type ProductRepositoryInfo = {
-  track: string;
+  id?: string;
   githubOwner: string;
   githubRepo: string;
 };
@@ -172,7 +172,7 @@ export type RepositorySubmissionItem = {
   id: string | null;
   assignmentId: string;
   weekNumber: number;
-  track: string;
+  productRepositoryId?: string | null;
   githubOwner: string;
   githubRepo: string;
   status: SubmissionStatus;
@@ -276,11 +276,11 @@ export function createElWarshaClient(options: ElWarshaClientOptions) {
     getAssignmentSubmission: (
       cohortSlug: string,
       weekNumber: number,
-      params?: { track?: string },
+      params?: { repositoryId?: string },
     ) =>
       request<AssignmentSubmissionResponse>(
-        params?.track
-          ? `/api/v1/cohorts/${cohortSlug}/assignments/${weekNumber}/submission?track=${params.track}`
+        params?.repositoryId
+          ? `/api/v1/cohorts/${cohortSlug}/assignments/${weekNumber}/submission?repositoryId=${params.repositoryId}`
           : `/api/v1/cohorts/${cohortSlug}/assignments/${weekNumber}/submission`,
       ),
     applyCohort: (cohortSlug: string, input: ApplyCohortInput) =>

@@ -154,8 +154,6 @@ export const messages = {
       submissionMergedBody:
         "تم دمج طلب الدمج الخاص بك في الفرع الرئيسي واكتمل تسليم الأسبوع بنجاح.",
       viewPrOnGithub: "عرض طلب الدمج على GitHub",
-      trackBackend: "مسار الواجهة الخلفية (Backend)",
-      trackFrontend: "مسار الواجهة الأمامية (Frontend)",
     },
     apply: {
       eyebrow: "الدفعة القادمة / Cohort 02",
@@ -319,8 +317,6 @@ export const messages = {
       submissionMergedBody:
         "Your pull request has been merged into main. Week assignment completed!",
       viewPrOnGithub: "View Pull Request on GitHub",
-      trackBackend: "Backend Track",
-      trackFrontend: "Frontend Track",
     },
     apply: {
       eyebrow: "Upcoming Cohort / Cohort 02",
