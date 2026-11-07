@@ -168,16 +168,26 @@ export type PullRequestSummary = {
   htmlUrl: string;
 };
 
-export type AssignmentSubmissionResponse = {
+export type RepositorySubmissionItem = {
   id: string | null;
   assignmentId: string;
   weekNumber: number;
   track: string;
+  githubOwner: string;
+  githubRepo: string;
   status: SubmissionStatus;
   prUrl: string | null;
   pullRequest: PullRequestSummary | null;
   updatedAt: string | null;
 };
+
+export type AssignmentSubmissionsResponse = {
+  assignmentId: string;
+  weekNumber: number;
+  submissions: RepositorySubmissionItem[];
+};
+
+export type AssignmentSubmissionResponse = RepositorySubmissionItem;
 
 export type CohortApplicationResponse = {
   id: string;
@@ -258,6 +268,10 @@ export function createElWarshaClient(options: ElWarshaClientOptions) {
     listWeeks: (params?: { locale?: Locale }) =>
       request<Week[]>(
         params?.locale ? `/api/v1/weeks?locale=${params.locale}` : "/api/v1/weeks",
+      ),
+    getAssignmentSubmissions: (cohortSlug: string, weekNumber: number) =>
+      request<AssignmentSubmissionsResponse>(
+        `/api/v1/cohorts/${cohortSlug}/assignments/${weekNumber}/submissions`,
       ),
     getAssignmentSubmission: (
       cohortSlug: string,
