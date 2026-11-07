@@ -13,4 +13,7 @@ export type {
   ApplyCohortInput,
   CohortApplicationResponse,
   ApiError,
+  AssignmentSubmissionResponse,
+  SubmissionStatus,
+  PullRequestSummary,
 } from "@elwarsha/api-client";

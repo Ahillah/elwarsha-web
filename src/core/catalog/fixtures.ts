@@ -5,7 +5,11 @@ export const productFixture: Product = {
   slug: "elwarsha-web",
   name: "ElWarsha Web",
   status: "active",
-  repository: { githubOwner: "elwarsha", githubRepo: "elwarsha-web" },
+  repositories: [
+    { track: "backend", githubOwner: "elwarsha", githubRepo: "elwarsha-api" },
+    { track: "frontend", githubOwner: "elwarsha", githubRepo: "elwarsha-web" },
+  ],
+  repository: { track: "frontend", githubOwner: "elwarsha", githubRepo: "elwarsha-web" },
 };
 
 export const engagementFixture: Engagement = {
