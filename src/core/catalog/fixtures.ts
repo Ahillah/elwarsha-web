@@ -6,8 +6,8 @@ export const productFixture: Product = {
   name: "ElWarsha Web",
   status: "active",
   repositories: [
-    { githubOwner: "elwarsha", githubRepo: "elwarsha-api" },
-    { githubOwner: "elwarsha", githubRepo: "elwarsha-web" },
+    { githubOwner: "El-warsha", githubRepo: "elwarsha-api" },
+    { githubOwner: "El-warsha", githubRepo: "elwarsha-web" },
   ],
   repository: { githubOwner: "elwarsha", githubRepo: "elwarsha-web" },
 };

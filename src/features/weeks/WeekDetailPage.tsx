@@ -15,6 +15,9 @@ import { WeekReflectionSection } from "./components/WeekReflectionSection.js";
 import { WeekPagination } from "./components/WeekPagination.js";
 
 import styles from "./WeekDetailPage.module.css";
+import { productFixture } from "@core/catalog/fixtures";
+import { useAssignmentSubmissions } from "@features/submissions/useSubmission";
+import { SubmissionStatusCard } from "@features/submissions/SubmissionStatusCard";
 
 export function WeekDetailPage({ locale }: { locale: Locale }) {
   const copy = messages[locale];
@@ -27,6 +30,13 @@ export function WeekDetailPage({ locale }: { locale: Locale }) {
     isError,
     error,
   } = useCohortWeekDetail(cohortSlug, weekNum, locale);
+
+  const {
+  data: submissionsData,
+  isLoading: isSubmissionsLoading,
+  isFetching: isSubmissionsFetching,
+  refetch,
+} = useAssignmentSubmissions(cohortSlug, weekNum);
 
   if (isLoading) {
     return (
@@ -79,7 +89,17 @@ export function WeekDetailPage({ locale }: { locale: Locale }) {
       </Link>
 
       <WeekHeader week={week} copy={copy} />
-
+     
+     {week.assignment && (
+  <SubmissionStatusCard
+   repositories={productFixture.repositories ?? []}
+    submissions={submissionsData?.submissions ?? []}
+    assignmentTitle={week.assignment.title}
+    isLoading={isSubmissionsLoading}
+    isFetching={isSubmissionsFetching}
+    onRefresh={() => refetch()}
+  />
+)}
       <WeekOutcomesList outcomes={week.outcomes} title={copy.portal.learningOutcomes} />
 
       <WeekConceptsGrid

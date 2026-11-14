@@ -162,23 +162,36 @@ export type ApplyCohortInput = {
 export type SubmissionStatus =
   "draft" | "submitted" | "in_review" | "eligible" | "merged" | "withdrawn";
 
+export type ProductRepositorySummary = {
+  id: string;
+  productId: string;
+  githubOwner: string;
+  githubRepo: string;
+  installationId: string;
+};
+
 export type PullRequestSummary = {
+  id: string;
+  submissionId: string;
+  githubPrId: string;
   number: number;
   state: "open" | "closed" | "merged";
-  htmlUrl: string;
+  approvalCount: number;
+  checksPassed: boolean;
+  updatedAt: string;
 };
 
 export type RepositorySubmissionItem = {
-  id: string | null;
+  id: string;
   assignmentId: string;
-  weekNumber: number;
-  productRepositoryId?: string | null;
-  githubOwner: string;
-  githubRepo: string;
+  authorUserId: string;
+  productRepositoryId: string;
   status: SubmissionStatus;
   prUrl: string | null;
+  createdAt: string;
+  updatedAt: string;
+  productRepository: ProductRepositorySummary;
   pullRequest: PullRequestSummary | null;
-  updatedAt: string | null;
 };
 
 export type AssignmentSubmissionsResponse = {
@@ -186,7 +199,6 @@ export type AssignmentSubmissionsResponse = {
   weekNumber: number;
   submissions: RepositorySubmissionItem[];
 };
-
 export type AssignmentSubmissionResponse = RepositorySubmissionItem;
 
 export type CohortApplicationResponse = {
